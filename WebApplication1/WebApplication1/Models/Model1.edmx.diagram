@@ -10,16 +10,16 @@
         <EntityTypeShape EntityType="CT25Team11Model.AspNetUserClaim" Width="1.5" PointX="13.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="CT25Team11Model.AspNetUserLogin" Width="1.5" PointX="13.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CT25Team11Model.AspNetUser" Width="1.5" PointX="11" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CT25Team11Model.Chitietdonhang" Width="1.5" PointX="1.5" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CT25Team11Model.Chitietgiaohang" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CT25Team11Model.Chitietdonhang" Width="1.5" PointX="1.625" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CT25Team11Model.Chitietgiaohang" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CT25Team11Model.Doanhthu" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CT25Team11Model.Donhang" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CT25Team11Model.Giaohang" Width="1.5" PointX="3.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CT25Team11Model.Donhang" Width="1.5" PointX="3.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="CT25Team11Model.Giaohang" Width="1.5" PointX="3.875" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="CT25Team11Model.Giohang" Width="1.5" PointX="3.75" PointY="14.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CT25Team11Model.Khuyenmai" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CT25Team11Model.Nguoidung" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CT25Team11Model.Quanlykho" Width="1.5" PointX="6" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CT25Team11Model.Sanpham" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CT25Team11Model.Sanpham" Width="1.5" PointX="0.875" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CT25Team11Model.sysdiagram" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CT25Team11Model.TaiKhoan" Width="1.5" PointX="3.75" PointY="17.125" IsExpanded="true" />
         <EntityTypeShape EntityType="CT25Team11Model.Thanhtoan" Width="1.5" PointX="3.75" PointY="20" IsExpanded="true" />
@@ -36,6 +36,8 @@
         <AssociationConnector Association="CT25Team11Model.FK_Nguoidung_TaiKhoan" ManuallyRouted="false" />
         <AssociationConnector Association="CT25Team11Model.FK_Nguoidung_Thanhtoan" ManuallyRouted="false" />
         <AssociationConnector Association="CT25Team11Model.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CT25Team11Model.BillDetail" Width="1.25" PointX="2.375" PointY="6.125" />
+        <EntityTypeShape EntityType="CT25Team11Model.Bill" Width="1.5" PointX="0.5" PointY="6.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

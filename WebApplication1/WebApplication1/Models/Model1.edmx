@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CT25Team11Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CT25Team11Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -117,23 +117,6 @@
           <Property Name="Soluong" Type="int" />
           <Property Name="Tongtien" Type="int" />
         </EntityType>
-        <EntityType Name="Khuyenmai">
-          <Key>
-            <PropertyRef Name="Makhuyenmai" />
-            <PropertyRef Name="Makhachhang" />
-          </Key>
-          <Property Name="Makhuyenmai" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Ngaykhuyenmai" Type="date" />
-          <Property Name="Thongtinsukien" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Makhachhang" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Sodiemtichluy" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Lienhe">
-          <Property Name="Thongtinlienhe" Type="nvarchar" MaxLength="100" />
-          <Property Name="Tuvanvien" Type="text" />
-        </EntityType>-->
         <EntityType Name="Nguoidung">
           <Key>
             <PropertyRef Name="id" />
@@ -396,7 +379,6 @@ warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key
           <EntitySet Name="Donhang" EntityType="Self.Donhang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Giaohang" EntityType="Self.Giaohang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Giohang" EntityType="Self.Giohang" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Khuyenmai" EntityType="Self.Khuyenmai" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nguoidung" EntityType="Self.Nguoidung" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Quanlykho" EntityType="Self.Quanlykho" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sanpham" EntityType="Self.Sanpham" Schema="dbo" store:Type="Tables" />
@@ -460,8 +442,7 @@ warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key
             <End Role="Quanlykho" EntitySet="Quanlykho" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CT25Team11Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -902,7 +883,32 @@ warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
+          <EntitySet Name="BillDetails" EntityType="CT25Team11Model.BillDetail" />
+          <EntitySet Name="Bills" EntityType="CT25Team11Model.Bill" />
         </EntityContainer>
+        <EntityType Name="BillDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bill_id" Type="String" Nullable="false" />
+          <Property Name="Product_id" Type="String" Nullable="false" />
+          <Property Name="Price" Type="String" Nullable="false" />
+          <Property Name="Quantity" Type="String" Nullable="false" />
+          <NavigationProperty Name="Bill" />
+          <NavigationProperty Name="Product" />
+        </EntityType>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Property1" Type="String" Nullable="false" />
+          <Property Name="Property2" Type="String" Nullable="false" />
+          <Property Name="Property3" Type="String" Nullable="false" />
+          <Property Name="Property4" Type="String" Nullable="false" />
+          <NavigationProperty Name="NavigationProperty1" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1018,17 +1024,6 @@ warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key
                 <ScalarProperty Name="Gia" ColumnName="Gia" />
                 <ScalarProperty Name="Soluong" ColumnName="Soluong" />
                 <ScalarProperty Name="Tongtien" ColumnName="Tongtien" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Khuyenmais">
-            <EntityTypeMapping TypeName="CT25Team11Model.Khuyenmai">
-              <MappingFragment StoreEntitySet="Khuyenmai">
-                <ScalarProperty Name="Makhuyenmai" ColumnName="Makhuyenmai" />
-                <ScalarProperty Name="Ngaykhuyenmai" ColumnName="Ngaykhuyenmai" />
-                <ScalarProperty Name="Thongtinsukien" ColumnName="Thongtinsukien" />
-                <ScalarProperty Name="Makhachhang" ColumnName="Makhachhang" />
-                <ScalarProperty Name="Sodiemtichluy" ColumnName="Sodiemtichluy" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
