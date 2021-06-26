@@ -12,7 +12,6 @@ namespace WebApplication1.Areas.Admin.Controllers
     {
     
         CT25Team11Entities model = new CT25Team11Entities();
-        //CommonService commonService = new CommonService();
         // GET: Admin/Admin
         public ActionResult Login()
         {
@@ -20,7 +19,6 @@ namespace WebApplication1.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        //[Filter.AuthorizeAdmin]
         public ActionResult Login(string email, string password)
         {
             var admin = model.TaiKhoans.FirstOrDefault(x => x.Tentaikhoan == email);
@@ -45,7 +43,6 @@ namespace WebApplication1.Areas.Admin.Controllers
             return View();
         }
 
-        //[Filter.AuthorizeAdmin]
         public ActionResult Dashboard()
         {
             return View();
