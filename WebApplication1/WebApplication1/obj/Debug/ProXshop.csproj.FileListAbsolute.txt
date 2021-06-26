@@ -106,3 +106,7 @@ C:\Users\MY PC\OneDrive\Documents\ProjectTeam\WebApplication1\WebApplication1\ob
 C:\Users\MY PC\OneDrive\Documents\ProjectTeam\WebApplication1\WebApplication1\obj\Debug\ProXshop.csproj.CopyComplete
 C:\Users\MY PC\OneDrive\Documents\ProjectTeam\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\MY PC\OneDrive\Documents\ProjectTeam\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+D:\code\ProXShopp1\WebApplication1\WebApplication1\obj\Debug\ProXshop.csprojAssemblyReference.cache
+D:\code\ProXShopp1\WebApplication1\WebApplication1\obj\Debug\ProXshop.csproj.CoreCompileInputs.cache
+D:\code\ProXShopp1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+D:\code\ProXShopp1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb

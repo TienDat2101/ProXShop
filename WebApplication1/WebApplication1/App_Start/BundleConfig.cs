@@ -25,6 +25,19 @@ namespace WebApplication1
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //admin resource
+            bundles.Add(new StyleBundle("~/Admin/Content/css").Include(
+                      "~/Content/vendor/bootstrap/css/bootstrap.min.css",
+                      "~/Content/vendor/font-awesome/css/font-awesome.min.css",
+                      "~/Content/vendor/font-awesome/css/material-dashboard.css",
+                      "~/Content/build/admin/css/demo.css",
+                      "~/Content/build/admin/css/switch.css",
+                      "~/Content/vendor/lightbox2/dist/css/lightbox.min.css"
+            ));
+            bundles.Add(new ScriptBundle("~/Admin/Content/js").Include(
+
+            ));
         }
     }
 }
