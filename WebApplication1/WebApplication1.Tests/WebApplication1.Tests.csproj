@@ -108,9 +108,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebApplication1\ProXshop.csproj">
+    <ProjectReference Include="..\WebApplication1\Webapplication1.csproj">
       <Project>{A4DD1363-4E1E-4ABE-AE33-2F157E6F560D}</Project>
-      <Name>ProXshop</Name>
+      <Name>Webapplication1</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

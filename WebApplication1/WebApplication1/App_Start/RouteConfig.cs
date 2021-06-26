@@ -16,7 +16,8 @@ namespace WebApplication1
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Sanphams", action = "Index2", id = UrlParameter.Optional }
+                defaults: new { controller = "Sanphams", action = "Index2", id = UrlParameter.Optional },
+                namespaces: new[] {"ProXshop.Controllers"}
             );
         }
     }

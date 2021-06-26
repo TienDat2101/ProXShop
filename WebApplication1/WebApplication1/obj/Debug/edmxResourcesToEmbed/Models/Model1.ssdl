@@ -112,6 +112,23 @@
     <Property Name="Soluong" Type="int" />
     <Property Name="Tongtien" Type="int" />
   </EntityType>
+  <EntityType Name="Khuyenmai">
+    <Key>
+      <PropertyRef Name="Makhuyenmai" />
+      <PropertyRef Name="Makhachhang" />
+    </Key>
+    <Property Name="Makhuyenmai" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Ngaykhuyenmai" Type="date" />
+    <Property Name="Thongtinsukien" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Makhachhang" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Sodiemtichluy" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Lienhe">
+          <Property Name="Thongtinlienhe" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tuvanvien" Type="text" />
+        </EntityType>-->
   <EntityType Name="Nguoidung">
     <Key>
       <PropertyRef Name="id" />
@@ -374,6 +391,7 @@
     <EntitySet Name="Donhang" EntityType="Self.Donhang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Giaohang" EntityType="Self.Giaohang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Giohang" EntityType="Self.Giohang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khuyenmai" EntityType="Self.Khuyenmai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Nguoidung" EntityType="Self.Nguoidung" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Quanlykho" EntityType="Self.Quanlykho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sanpham" EntityType="Self.Sanpham" Schema="dbo" store:Type="Tables" />
