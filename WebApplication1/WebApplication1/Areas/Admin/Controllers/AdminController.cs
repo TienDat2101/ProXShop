@@ -33,7 +33,7 @@ namespace WebApplication1.Areas.Admin.Controllers
                 {
                     Session["FullName"] = admin.Tentaikhoan;
                     Session["isAdmin"] = "Admin";
-                    return RedirectToAction("Dashboard", "Admin");
+                    return RedirectToAction("Index", "Sanphams");
                     
                 }
             }

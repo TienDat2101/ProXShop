@@ -168,6 +168,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SanphamsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AspNetRolesUserController.cs" />
     <Compile Include="Controllers\AspNetRolesController.cs" />
@@ -475,6 +476,14 @@
     <Content Include="Areas\Admin\Views\Shared\Common\_Sidebar.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Dashboard.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Donhang.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Index2.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\InforProduct.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
