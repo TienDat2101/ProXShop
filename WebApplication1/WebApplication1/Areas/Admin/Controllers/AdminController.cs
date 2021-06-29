@@ -50,7 +50,7 @@ namespace WebApplication1.Areas.Admin.Controllers
         {
             Session.Clear();
             Session.RemoveAll();
-            return View("Login", "Admin");
+            return View("Login");
         }
 
         public ActionResult Dashboard()

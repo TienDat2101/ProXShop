@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebApplication1.Models.Donhang>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Giatridonhang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thongtindonhang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chitietdonhang.Masanpham)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Giatridonhang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Thongtindonhang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Chitietdonhang.Masanpham)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Chitietdonhang.Gia)<spa>x</spa>@Html.DisplayFor(modelItem => item.Chitietdonhang.Soluong)
+    </td>
+    @*<td>
+            @foreach (var details in item.Chitietdonhang)
+            {
+                    @details.sanpham.Tensanpham <spa>x</spa> @details.Soluong<br />
+             }
+        </td>*@
+</tr>
+}
+
+</table>

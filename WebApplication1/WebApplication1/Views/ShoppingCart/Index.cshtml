@@ -1,0 +1,86 @@
+﻿@model IEnumerable<WebApplication1.Models.Chitietdonhang>
+
+@{
+    ViewBag.Title = "Index";
+    var Subtotal = 0;
+}
+
+<div class="cart_inner">
+    <div class="table-responsive">
+        @using (Html.BeginForm("Edit", "ShoppingCart"))
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        Subtotal += item.sanpham.Gia * item.Soluong;
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="@Url.Action("HinhAnh", "sanpham", new { item.Masanpham })" alt="" width="148px" height="154px">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            <a href="@Url.Action("Details", "sanpham", new { item.Masanpham})">@item.sanpham.TenSanPham</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <h5>@item.sanpham.Gia.ToString("N0") vnđ</h5>
+                            </td>
+                            <td>
+                                <div class="product_count">
+                                    @Html.Hidden("Masanpham", item.Masanpham)
+                                    <span name="Decrement" class="input-number-decrement"> <i class="ti-minus"></i></span>
+                                    <input name="Quantity" class="input-number" type="text" value="@item.Soluong" min="0" max="10">
+                                    <span name="Increment" class="input-number-increment"> <i class="ti-plus"></i></span>
+                                </div>
+                            </td>
+                            <td>
+                                <h5>@((item.sanpham.Gia * item.Soluong).ToString("N0")) vnđ</h5>
+                            </td>
+                        </tr>
+                    }
+                    <tr class="bottom_button">
+                        <td>
+                            <a class="btn_1" href="@Url.Action("Index2", "sanpham")">Continue Shopping</a>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div class="cupon_text float-right">
+                                <a class="btn_1" href="@Url.Action("Delete", "ShoppingCart")">Clear Cart</a>
+                                <input type="submit" class="btn_1" value="Update Cart" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <h5>Tổng Tiền</h5>
+                        </td>
+                        <td>
+                            <h5>vnđ @Subtotal.ToString("N0")</h5>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+        <div class="checkout_btn_inner float-right">
+            <a class="btn_1" href="#">Continue Shopping</a>
+            <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+        </div>
+    </div>
+</div>
+

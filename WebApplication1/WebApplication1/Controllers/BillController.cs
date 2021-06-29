@@ -10,53 +10,55 @@ namespace WebApplication1.Controllers
 {
     public class BillController : Controller
     {
-        private CS4PEntities db = new CS4PEntities();
+        private CT25Team11Entities db = new CT25Team11Entities();
 
-        private List<BillDetai> ShoppingCart = null;
+        private List<Chitietdonhang> ShoppingCart = null;
 
         private void GetShoppingCart()
         {
             if (Session["ShoppingCart"] != null)
-                GetShoppingCart = Session["ShoppingCart"] as List<BillDetai>;
+                ShoppingCart = Session["ShoppingCart"] as List<Chitietdonhang>;
             else
             {
-                ShoppingCart = new List<BillDetai>();
+                ShoppingCart = new List<Chitietdonhang>();
                 Session["ShoppingCart"] = ShoppingCart;
             }
         }
+
+        [Authorize(Roles ="Admin")]
         // GET: Donhang
         public ActionResult Index()
         {
-            var model = db.Bill.ToList();
+            var model = db.Donhangs.ToList();
             return View(model);
         }
 
         public ActionResult Create()
         {
             GetShoppingCart();
-                ViewBag.Cart = ShoppingCart;
+            ViewBag.Cart = ShoppingCart;
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(BillController model)
+        public ActionResult Create(Donhang model)
         {
-            ValidateBill(model);
+
             if (ModelState.IsValid)
             {
-                model.Date = DateTime.Now;
-                db.Bills.Add(model);
+                model.Ngaytaodon = DateTime.Now;
+                db.Donhangs.Add(model);
                 db.SaveChanges();
 
                 foreach (var item in ShoppingCart)
                 {
-                    db.BillDetails.Add(new BillDetai
+                    db.Chitietdonhangs.Add(new Chitietdonhang
                     {
-                        Bill_id = model.id,
-                        Product_id = item.Product.id,
-                        Price = item.Product.Price,
-                        Quantity = item.Quantity
+                        Madonhang = model.Madonhang,
+                        Masanpham = item.Masanpham,
+                        Gia = item.Gia,
+                        Soluong = item.Soluong
                     });
                 }
                 db.SaveChanges();
@@ -75,8 +77,8 @@ namespace WebApplication1.Controllers
             GetShoppingCart();
             if (ShoppingCart.Count == 0)
                 ModelState.AddModelError("", "There is no item in shopping cart!");
-            if (regex.IsMatch(model.Phone))
-                ModelState.AddModelError("Phone", "Weong phone number");
+            //if (regex.IsMatch(model.Phone))
+            //    ModelState.AddModelError("Phone", "Weong phone number");
         }
     }
 }

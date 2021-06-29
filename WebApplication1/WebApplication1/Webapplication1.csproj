@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AspNetRolesUserController.cs" />
     <Compile Include="Controllers\AspNetRolesController.cs" />
+    <Compile Include="Controllers\BillController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SanphamsController.cs" />
@@ -476,12 +477,12 @@
     <Content Include="Areas\Admin\Views\Shared\Common\_Sidebar.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Dashboard.cshtml" />
-    <Content Include="Areas\Admin\Views\Sanphams\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Donhang.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Index2.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\InforProduct.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
@@ -508,6 +509,8 @@
     <Content Include="Views\Giohangs\Details.cshtml" />
     <Content Include="Views\Giohangs\Edit.cshtml" />
     <Content Include="Views\Giohangs\Index.cshtml" />
+    <Content Include="Views\Bill\Create.cshtml" />
+    <Content Include="Views\Bill\Index.cshtml" />
     <None Include="Views\Shared\ProXshop.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -524,8 +527,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
