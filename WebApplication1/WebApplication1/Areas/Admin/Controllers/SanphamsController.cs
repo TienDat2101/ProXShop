@@ -9,9 +9,9 @@ using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
 
-namespace WebApplication1.Controllers
+namespace WebApplication1.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class SanphamsController : Controller
     {
         private CT25Team11Entities db = new CT25Team11Entities();
 
