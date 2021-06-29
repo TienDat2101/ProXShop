@@ -24,9 +24,12 @@ namespace WebApplication1.Models
         public string Madonhang { get; set; }
         public Nullable<int> Giatridonhang { get; set; }
         public string Thongtindonhang { get; set; }
+        public string Magiohang { get; set; }
+        public Nullable<System.DateTime> Ngaytaodon { get; set; }
     
         public virtual Chitietdonhang Chitietdonhang { get; set; }
-        public virtual Chitietgiaohang Chitietgiaohang { get; set; }
+        public virtual Giaohang Giaohang { get; set; }
+        public virtual Giohang Giohang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Nguoidung> Nguoidungs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
