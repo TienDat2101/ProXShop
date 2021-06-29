@@ -476,19 +476,12 @@
     <Content Include="Areas\Admin\Views\Shared\Common\_Sidebar.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Dashboard.cshtml" />
-<<<<<<< HEAD
-=======
     <Content Include="Areas\Admin\Views\Sanphams\Index.cshtml" />
->>>>>>> main
     <Content Include="Areas\Admin\Views\Sanphams\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Donhang.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Edit.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Areas\Admin\Views\Sanphams\Index.cshtml" />
-=======
->>>>>>> main
     <Content Include="Areas\Admin\Views\Sanphams\Index2.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\InforProduct.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
