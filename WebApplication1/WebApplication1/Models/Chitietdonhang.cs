@@ -18,6 +18,8 @@ namespace WebApplication1.Models
         public Nullable<int> Gia { get; set; }
         public string Masanpham { get; set; }
         public Nullable<System.DateTime> ngaygiaohang { get; set; }
+        public string sanpham { get; set; }
+        public Nullable<int> Soluong { get; set; }
     
         public virtual Donhang Donhang { get; set; }
     }

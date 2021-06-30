@@ -19,7 +19,6 @@ namespace WebApplication1.Models
         public string Masanpham { get; set; }
         public Nullable<System.DateTime> ngaygiaohang { get; set; }
     
-        public virtual Donhang Donhang { get; set; }
-        public virtual Sanpham Sanpham { get; set; }
+        public virtual Giaohang Giaohang { get; set; }
     }
 }

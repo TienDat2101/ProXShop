@@ -69,6 +69,8 @@
     <Property Name="Gia" Type="int" />
     <Property Name="Masanpham" Type="varchar" MaxLength="10" />
     <Property Name="ngaygiaohang" Type="datetime" />
+    <Property Name="sanpham" Type="nvarchar" MaxLength="255" />
+    <Property Name="Soluong" Type="int" />
   </EntityType>
   <EntityType Name="Chitietgiaohang">
     <Key>
@@ -93,6 +95,8 @@
     <Property Name="Madonhang" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="Giatridonhang" Type="int" />
     <Property Name="Thongtindonhang" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Magiohang" Type="varchar" MaxLength="10" />
+    <Property Name="Ngaytaodon" Type="date" />
   </EntityType>
   <EntityType Name="Giaohang">
     <Key>
@@ -112,23 +116,6 @@
     <Property Name="Soluong" Type="int" />
     <Property Name="Tongtien" Type="int" />
   </EntityType>
-  <EntityType Name="Khuyenmai">
-    <Key>
-      <PropertyRef Name="Makhuyenmai" />
-      <PropertyRef Name="Makhachhang" />
-    </Key>
-    <Property Name="Makhuyenmai" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="Ngaykhuyenmai" Type="date" />
-    <Property Name="Thongtinsukien" Type="nvarchar" MaxLength="1000" />
-    <Property Name="Makhachhang" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="Sodiemtichluy" Type="int" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Lienhe">
-          <Property Name="Thongtinlienhe" Type="nvarchar" MaxLength="100" />
-          <Property Name="Tuvanvien" Type="text" />
-        </EntityType>-->
   <EntityType Name="Nguoidung">
     <Key>
       <PropertyRef Name="id" />
@@ -202,27 +189,15 @@ warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key
     <Property Name="Phuongthucthanhtoan" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Voucher" Type="varchar" MaxLength="10" />
   </EntityType>
-  <Association Name="FK_Chitietgiaohang_Donhang">
-    <End Role="Donhang" Type="Self.Donhang" Multiplicity="1" />
+  <Association Name="FK_Chitietgiaohang_Giaohang">
+    <End Role="Giaohang" Type="Self.Giaohang" Multiplicity="1" />
     <End Role="Chitietgiaohang" Type="Self.Chitietgiaohang" Multiplicity="0..1" />
     <ReferentialConstraint>
-      <Principal Role="Donhang">
+      <Principal Role="Giaohang">
         <PropertyRef Name="Madonhang" />
       </Principal>
       <Dependent Role="Chitietgiaohang">
         <PropertyRef Name="Madonhang" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Chitietgiaohang_Sanpham">
-    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="0..1" />
-    <End Role="Chitietgiaohang" Type="Self.Chitietgiaohang" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Sanpham">
-        <PropertyRef Name="Masanpham" />
-      </Principal>
-      <Dependent Role="Chitietgiaohang">
-        <PropertyRef Name="Masanpham" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -294,6 +269,42 @@ warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Donhang_Giaohang">
+    <End Role="Giaohang" Type="Self.Giaohang" Multiplicity="1" />
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Giaohang">
+        <PropertyRef Name="Madonhang" />
+      </Principal>
+      <Dependent Role="Donhang">
+        <PropertyRef Name="Madonhang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donhang_Giohang">
+    <End Role="Giohang" Type="Self.Giohang" Multiplicity="0..1" />
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Giohang">
+        <PropertyRef Name="Magiohang" />
+      </Principal>
+      <Dependent Role="Donhang">
+        <PropertyRef Name="Magiohang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Giohang_Sanpham">
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="0..1" />
+    <End Role="Giohang" Type="Self.Giohang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanpham">
+        <PropertyRef Name="Masanpham" />
+      </Principal>
+      <Dependent Role="Giohang">
+        <PropertyRef Name="Masanpham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Nguoidung_Donhang">
     <End Role="Donhang" Type="Self.Donhang" Multiplicity="0..1" />
     <End Role="Nguoidung" Type="Self.Nguoidung" Multiplicity="*" />
@@ -318,7 +329,7 @@ warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Nguoidung_Giohang">
+  <Association Name="FK_Nguoidung_Giohang1">
     <End Role="Giohang" Type="Self.Giohang" Multiplicity="1" />
     <End Role="Nguoidung" Type="Self.Nguoidung" Multiplicity="*" />
     <ReferentialConstraint>
@@ -391,19 +402,14 @@ warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key
     <EntitySet Name="Donhang" EntityType="Self.Donhang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Giaohang" EntityType="Self.Giaohang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Giohang" EntityType="Self.Giohang" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Khuyenmai" EntityType="Self.Khuyenmai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Nguoidung" EntityType="Self.Nguoidung" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Quanlykho" EntityType="Self.Quanlykho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sanpham" EntityType="Self.Sanpham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Thanhtoan" EntityType="Self.Thanhtoan" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Chitietgiaohang_Donhang" Association="Self.FK_Chitietgiaohang_Donhang">
-      <End Role="Donhang" EntitySet="Donhang" />
-      <End Role="Chitietgiaohang" EntitySet="Chitietgiaohang" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Chitietgiaohang_Sanpham" Association="Self.FK_Chitietgiaohang_Sanpham">
-      <End Role="Sanpham" EntitySet="Sanpham" />
+    <AssociationSet Name="FK_Chitietgiaohang_Giaohang" Association="Self.FK_Chitietgiaohang_Giaohang">
+      <End Role="Giaohang" EntitySet="Giaohang" />
       <End Role="Chitietgiaohang" EntitySet="Chitietgiaohang" />
     </AssociationSet>
     <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
@@ -426,6 +432,18 @@ warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key
       <End Role="Chitietdonhang" EntitySet="Chitietdonhang" />
       <End Role="Donhang" EntitySet="Donhang" />
     </AssociationSet>
+    <AssociationSet Name="FK_Donhang_Giaohang" Association="Self.FK_Donhang_Giaohang">
+      <End Role="Giaohang" EntitySet="Giaohang" />
+      <End Role="Donhang" EntitySet="Donhang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donhang_Giohang" Association="Self.FK_Donhang_Giohang">
+      <End Role="Giohang" EntitySet="Giohang" />
+      <End Role="Donhang" EntitySet="Donhang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Giohang_Sanpham" Association="Self.FK_Giohang_Sanpham">
+      <End Role="Sanpham" EntitySet="Sanpham" />
+      <End Role="Giohang" EntitySet="Giohang" />
+    </AssociationSet>
     <AssociationSet Name="FK_Nguoidung_Donhang" Association="Self.FK_Nguoidung_Donhang">
       <End Role="Donhang" EntitySet="Donhang" />
       <End Role="Nguoidung" EntitySet="Nguoidung" />
@@ -434,7 +452,7 @@ warning 6013: The table/view 'CT25Team11.dbo.Lienhe' does not have a primary key
       <End Role="Giaohang" EntitySet="Giaohang" />
       <End Role="Nguoidung" EntitySet="Nguoidung" />
     </AssociationSet>
-    <AssociationSet Name="FK_Nguoidung_Giohang" Association="Self.FK_Nguoidung_Giohang">
+    <AssociationSet Name="FK_Nguoidung_Giohang1" Association="Self.FK_Nguoidung_Giohang1">
       <End Role="Giohang" EntitySet="Giohang" />
       <End Role="Nguoidung" EntitySet="Nguoidung" />
     </AssociationSet>
