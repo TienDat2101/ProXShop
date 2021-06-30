@@ -24,8 +24,6 @@ namespace WebApplication1.Models
         public Nullable<System.DateTime> Thoigiangiaohang { get; set; }
         public string Madonhang { get; set; }
     
-        public virtual Chitietgiaohang Chitietgiaohang { get; set; }
-        public virtual Donhang Donhang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Nguoidung> Nguoidungs { get; set; }
     }

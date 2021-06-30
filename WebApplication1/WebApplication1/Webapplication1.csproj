@@ -476,14 +476,18 @@
     <Content Include="Areas\Admin\Views\Shared\Common\_Sidebar.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Dashboard.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Donhang.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Sanphams\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Index2.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\InforProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Lockout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\ProXshop.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LoginPartial.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -508,6 +512,13 @@
     <Content Include="Views\Giohangs\Details.cshtml" />
     <Content Include="Views\Giohangs\Edit.cshtml" />
     <Content Include="Views\Giohangs\Index.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Donhang.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
+    <Content Include="Views\Home\InforProduct.cshtml" />
     <None Include="Views\Shared\ProXshop.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -524,6 +535,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />

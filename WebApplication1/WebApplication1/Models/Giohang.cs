@@ -17,7 +17,6 @@ namespace WebApplication1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Giohang()
         {
-            this.Donhangs = new HashSet<Donhang>();
             this.Nguoidungs = new HashSet<Nguoidung>();
         }
     
@@ -27,9 +26,6 @@ namespace WebApplication1.Models
         public Nullable<int> Soluong { get; set; }
         public Nullable<int> Tongtien { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Donhang> Donhangs { get; set; }
-        public virtual Sanpham Sanpham { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Nguoidung> Nguoidungs { get; set; }
     }
